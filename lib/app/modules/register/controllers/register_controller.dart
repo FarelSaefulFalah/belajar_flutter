@@ -15,19 +15,19 @@ class RegisterController extends GetxController {
   void registerNow() async {
     // Validasi inputan
     if (nameController.text.isEmpty) {
-      _showErrorSnackbar('Error', 'Name cannot be empty');
+      _showErrorSnackbar('Error', 'Nama Tidak Boleh Kosong');
       return;
     }
     if (emailController.text.isEmpty || !GetUtils.isEmail(emailController.text)) {
-      _showErrorSnackbar('Error', 'Email must be valid and cannot be empty');
+      _showErrorSnackbar('Error', 'Wajib berformat email & tidak boleh kosong');
       return;
     }
     if (passwordController.text.isEmpty || passwordController.text.length < 8) {
-      _showErrorSnackbar('Error', 'Password must be at least 8 characters and cannot be empty');
+      _showErrorSnackbar('Error', 'Tidak boleh kosong & minimal 8 character');
       return;
     }
     if (passwordController.text != passwordConfirmationController.text) {
-      _showErrorSnackbar('Error', 'Password confirmation does not match');
+      _showErrorSnackbar('Error', 'Konfirmasi Password tidak sama');
       return;
     }
 
